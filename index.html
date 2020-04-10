@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Timer CoR</title>
+    <link href="./style.css" rel="stylesheet">
+    
+</head>
+    
+
+<body>
+
+<h1 align="center">Competencia Robótica 2020</h1> 
+
+<h2 align="center">Universidad Técnica Federico Santa María</h2> 
+    
+<ul class="countdown">
+    <li>
+        <span id='timer'>00:00,000</span>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </li>
+        
+    <div class="clock-buttons">
+        
+        <button onclick='startTimer()' type="button" class="clock-button clock-button--start">
+            <span class="clock-button__text">Start</span>
+        </button>
+        
+        <button onclick='stopTimer()' type="button" class="clock-button">
+            <span class="clock-button__text">Stop</span>
+        </button>
+
+        <button onclick='clearTimer()' type="button" class="clock-button clock-button--pause">
+            <span class="clock-button__text">Reset</span>
+        </button>
+    
+    </div>
+</ul>
+
+
+<a href="#"><img id="logo_l" src="img/logos/IRE_blanco.png"></a>
+<a href="#"><img id="logo_r" src="img/logos/cor_blanco.png"></a>
+
+
+<br>
+<br>
+
+
+
+<a type="button" id="bt" value="Log" onclick="saveFile()" class="btn">Log Download</a>
+    
+<script src="./script.js"></script> 
+
+
+</body>
+</html>
