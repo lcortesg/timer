@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <link href='img/favicon.png' rel='shortcut icon'>
+    <title>Timer CoR</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+    
+
+<body>
+<h1 align="center">Competencia Robótica 2020</h1> 
+<!-- <h2 align="center">Universidad Técnica Federico Santa María</h2> -->
+    
+<!--
+<div align="center">
+    <font size="+2" >Último tiempo : </font> <font size="+2" id='last_timer' >00:00,000</font><br>
+    <font size="+2" >Vuelta Nº : </font> <font size="+2" id='lap_number' >1</font>
+</div>
+-->
+
+<div align="center">
+    <font size="+1" >Lap Time Nº 1 : </font> <font size="+1" id='lap1_timer' >-</font><br>
+    <font size="+1" >Lap Time Nº 2 : </font> <font size="+1" id='lap2_timer' >-</font><br>
+    <font size="+1" >Lap Time Nº 3 : </font> <font size="+1" id='lap3_timer' >-</font>
+</div>
+
+
+    
+<ul class="countdown">
+    <li>
+        <span id='timer'>00:00,000</span>
+    </li>
+</ul>
+
+<div align="center">
+    <font size="+1" >Best Time : </font> <font size="+1" id='best_timer' >-</font><br>
+</div>
+
+
+<br>
+ 
+
+
+<div id="show_start" align="center">
+    <button onclick='startTimer()' type="button" class="clock-button clock-button--start" id="start_button">
+            <span class="clock-button__text">Start</span>
+    </button>
+    
+    <button onclick='resetTimer()' type="button" class="clock-button" id="reset_button"> 
+            <span class="clock-button__text">Reset</span>
+    </button>
+</div>
+
+<div id="show_stop" align="center">
+    <button onclick='stopTimer()' type="button" class="clock-button clock-button--pause" id="stop_button">
+        <span class="clock-button__text">Stop</span>
+    </button>
+    
+    <button onclick='resetTimer()' type="button" class="clock-button" id="reset_button"> 
+        <span class="clock-button__text">Reset</span>
+    </button>
+</div>
+
+<!--
+<div align="center">
+<button onclick='startTimer()' type="button" class="clock-button clock-button--start" id="start_button">
+        <span class="clock-button__text">Start</span>
+</button>
+
+<button onclick='stopTimer()' type="button" class="clock-button" id="stop_button">
+        <span class="clock-button__text">Stop</span>
+</button>
+    
+<button onclick='clearTimer()' type="button" class="clock-button clock-button--pause" id="reset_button"> 
+        <span class="clock-button__text">Reset</span>
+</button>
+</div>
+-->
+    
+<!--  
+<div align="center" class="clock-buttons">
+    
+    <button onclick='startTimer()' type="button" class="clock-button clock-button--start" id="start_button">
+        <span class="clock-button__text">Start</span>
+    </button>
+   
+
+    <button onclick='stopTimer()' type="button" class="clock-button" id="stop_button">
+        <span class="clock-button__text">Stop</span>
+    </button>
+
+    <button onclick='clearTimer()' type="button" class="clock-button clock-button--pause" id="reset_button"> 
+        <span class="clock-button__text">Reset</span>
+    </button>
+</div>
+-->
+
+
+<a href="#"><img id="logo_l" src="img/logos/IRE_blanco.png"></a>   
+<a href="#"><img id="logo_r" src="img/logos/cor_blanco.png"></a>
+
+<br>
+
+<a type="button" id="bt" value="Log" onclick="saveFile()" class="btn">Log Download</a>  
+    
+<!--
+
+-->
+
+
+
+
+
+<script src="./script.js"></script> 
+    
+</body>
+</html>

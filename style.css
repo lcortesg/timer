@@ -1,0 +1,244 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+/*
+@font-face {
+  font-family: UbuntuMono;
+  src: url(font/Ubuntu-Mono.ttf);
+}
+*/
+
+
+body {
+    background: #363f48; /*#282828;*/ 
+    /*background-image: url('img/info.png');*/
+    color: white;
+    font: normal 12px 'Open Sans', sans-serif;
+    margin-top: 20px;
+}
+
+
+h1 {
+   font-size: 300%;
+}
+
+ul.countdown {
+    list-style: none;
+    margin: 100px 0;
+    padding: 0;
+    display: block;
+    text-align: center;
+}
+
+ul.countdown li {
+    display: inline-block;
+}
+
+ul.countdown li span {
+    font-size: 250px;
+    font-weight: 100;
+    line-height: 80px;
+}
+
+ul.countdown li.seperator {
+    font-size: 80px;
+    line-height: 70px;
+    vertical-align: top;
+}
+
+ul.countdown li p {
+    color: #a7abb1;
+    font-size: 14px;
+}
+
+a {
+    color: #76949F;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.source {
+    width: 405px;
+    margin: 0 auto;
+    background: #4f5861;
+    color: #a7abb1;
+    font-weight: bold;
+    display: block;
+    white-space: pre;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+
+.btn {
+    background: #f56c4c;
+    margin: 40px auto;
+    padding: 12px;
+    display: block;
+    width: 100px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+            border-radius: 2px;
+}
+
+.btn:hover {
+    text-decoration: none;
+    opacity: .7;
+}
+
+
+
+.clock-button {
+  position: relative;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: 0 20px;
+  background-color: #ebebeb;
+  border-radius: 50%;
+  border: none;
+  color: #5e5e5e;
+  font-size: 1.5em;
+  font-family: "PT Sans", "Helvetica", sans-serif;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.clock-button::before {
+  z-index: 0;
+  content: '';
+  position: absolute;
+  top: -7.5px;
+  left: -7.5px;
+  right: -7.5px;
+  bottom: -7.5px;
+  background-color: rgba(235, 235, 235, 0.5);
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+.clock-button:hover {
+  cursor: pointer;
+}
+.clock-button:active::before {
+  transform: scale(0.95);
+}
+.clock-button:active, .clock-button:focus {
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.clock-button--start {
+  /*background-color: #4fe3c1;*/
+  background-color: #13c241;
+  color: #fff;
+}
+.clock-button--start::before {
+  background-color: rgba(20, 210, 90, 0.5);
+}
+
+.clock-button--pause {
+  background-color: #ff415a;
+  color: #fff;
+}
+.clock-button--pause::before {
+  background-color: rgba(255, 65, 90, 0.5);
+}
+
+.clock-button__text {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#logo_l {
+  display: inline-block;
+  margin: 15px; /* margin: 20px was off */
+  float: left;
+  height: 110px;
+  width: auto; /* correct proportions to specified height */ 
+}
+
+#logo_r {
+  display: inline-block;
+  margin: 15px; /* margin: 20px was off */
+  float: right;
+  height: 110px;
+  width: auto; /* correct proportions to specified height */ 
+}
+
+
+
+.log-button {
+  position: relative;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: 0 20px;
+  background-color: #ebebeb;
+  border-radius: 50%;
+  border: none;
+  color: #5e5e5e;
+  font-size: 1.5em;
+  font-family: "PT Sans", "Helvetica", sans-serif;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.log-button::before {
+  z-index: 0;
+  content: '';
+  position: absolute;
+  top: -7.5px;
+  left: -7.5px;
+  right: -7.5px;
+  bottom: -7.5px;
+  background-color: rgba(235, 235, 235, 0.5);
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+.log-button:hover {
+  cursor: pointer;
+}
+.log-button:active::before {
+  transform: scale(0.95);
+}
+.log-button:active, .log-button:focus {
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.log-button--download {
+  /*background-color: #4fe3c1;*/
+  background-color: #f56c4c;
+  color: #fff;
+}
+.log-button--download::before {
+  background-color: rgba(245, 131, 102, 0.5);
+}
+
+
+.log-button__text {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide{
+display:none;
+}
+
+.show{
+display:block;
+}
