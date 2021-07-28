@@ -16,16 +16,16 @@ var inicio;
 var fin;
 var safe_time = 0;
 var acum_time = 0;
-var max_time = 600;
+var max_time = 5;
 lap1_time = document.getElementById('lap1_timer');
 lap2_time = document.getElementById('lap2_timer');
 lap3_time = document.getElementById('lap3_timer');
 best_time = document.getElementById('best_timer');
 var best_time_ever = "99:99:999";
-const autoSave = true;
+const autoSave = false;
 const alerts = true;
 const needReset = true;
-var data='\r**********************************************\r\n' + '\r  Log Timer Competencia Robótica UTFSM ' + new Date().getFullYear() + '\r\n'  + '\r**********************************************\r\n\n' + '\rLog Started: '+  fecha(new Date().getTime()) + '\r\n' + '\rLap |   Time    |  Start Time  |   End Time\r\n';
+var data='\r**********************************************\r\n' + '\r  Log Timer Competencia Robótica UTFSM ' + new Date().getFullYear() + '\r\n'  + '\r**********************************************\r\n\n' + '\r----------------------------------------------\r'+'Log Started: '+  fecha(new Date().getTime()) + '\r----------------------------------------------\r' + '\r\nLap |   Time    |  Start Time  |   End Time\r\n';
 
 
 function displayTimer() {
@@ -88,7 +88,7 @@ function displayTimer() {
     time += seconds + ','
     time += miliseconds;
     T.timerDiv.innerHTML = time;
-    if ((acum_time + T.difference/1000 >= 15)&alerts) {maxedTimer();}
+    if ((acum_time + T.difference/1000 >= max_time)&alerts) {maxedTimer();}
 }
 
 
@@ -136,7 +136,8 @@ function stopTimer() {
         acum_time += T.difference/1000
         running = 2;
         tiempo = document.getElementById('timer').innerHTML;
-        if (tiempo < best_time_ever){ best_time_ever=tiempo; best_time.innerHTML= tiempo;}
+        //
+        if (tiempo < best_time_ever){best_time_ever=tiempo; best_time.innerHTML= best_time_ever;}
         data += '\r '+vuelta+'  | ' + tiempo + ' | ' + hora(inicio) + ' | ' + hora(fin) + '\r\n '
         if (vuelta == 3){
             data +='\r----------------------------------------------\r\n';
@@ -148,7 +149,7 @@ function stopTimer() {
         }
         else if (vuelta == 2){
             lap2_time.innerHTML = tiempo;
-            vuelta=3;
+            vuelta = 3;
         }
         else if (vuelta == 1){
             lap1_time.innerHTML = tiempo;
@@ -197,19 +198,28 @@ function invalidTimer(){
         lap3_time.innerHTML = "Vuelta inválida";
         if(autoSave){saveFile();}
     }
-    
-    else if (vuelta == 2){
-        
+    else if (vuelta == 2){     
         vuelta=3;
         lap2_time.innerHTML = "Vuelta Inválida";
     }
-
     clearTimer();
     alert('TIEMPO MÍNIMO DE ESPERA NO REALIZADO');
 }
 
 function maxedTimer(){
     data += '\r '+ vuelta +'  |        MAXIMUM TIME EXCEEDED\r\n ' + '\r----------------------------------------------\r\n';
+    if (vuelta == 3){
+        lap3_time.innerHTML = "Tiempo Máximo Excedido";
+    }
+    else if (vuelta == 2){
+        lap2_time.innerHTML = "Tiempo Máximo Excedido";
+        lap3_time.innerHTML = "Tiempo Máximo Excedido";
+    }
+    else if (vuelta == 1){
+        lap1_time.innerHTML = "Tiempo Máximo Excedido";
+        lap2_time.innerHTML = "Tiempo Máximo Excedido";
+        lap3_time.innerHTML = "Tiempo Máximo Excedido";
+    }
     vuelta=1;
     acum_time = 0;
     x.style.display = "block";
@@ -220,7 +230,6 @@ function maxedTimer(){
     //stopTimer();
     alert('TIEMPO MÁXIMO PERMITIDO SUPERADO');
     if(autoSave){saveFile();}
-
 }
 
 
@@ -238,6 +247,7 @@ function keyPressFunction(e){
 
 
 function saveFile(){
+    data += '\r----------------------------------------------\r'+'Log Ended: '+  fecha(new Date().getTime()) +'\r----------------------------------------------\r'
     // Convert the text to BLOB.
     const textToBLOB = new Blob([data], { type: 'text/plain' });
     const sFileName = 'log.txt'; // File to save the data.
