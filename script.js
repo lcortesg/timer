@@ -25,7 +25,7 @@ var best_time_ever = "99:99:999";
 const autoSave = true;
 const alerts = true;
 const needReset = true;
-var data='\r**********************************************\r\n' + '\r  Log Timer Competencia Robótica UTFSM 2020 \r\n' + '\r**********************************************\r\n\n' + '\rLog Started: '+  fecha(new Date().getTime()) +'\r\n' + '\rLap |   Time    |  Start Time  |   End Time\r\n';
+var data='\r**********************************************\r\n' + '\r  Log Timer Competencia Robótica UTFSM ' + new Date().getFullYear() + '\r\n'  + '\r**********************************************\r\n\n' + '\rLog Started: '+  fecha(new Date().getTime()) + '\r\n' + '\rLap |   Time    |  Start Time  |   End Time\r\n';
 
 
 function displayTimer() {
